@@ -7,7 +7,7 @@ const treeData = [
     id: 1,
     commonName: "Araçá",
     scientificName: "Psidium cattleyanum",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczPihsm4x4M8wOBKyB24dLHyDJ7OCyo4CgyEo5W6uSFgTDRtRs_oLFc=w385-h430-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://imgur.com/a/BNOEY7s", // Imagem placeholder
     distribution: "Florestas tropicais e subtropicais. Nativo da Mata Atlântica, com maior ocorrência no litoral do Brasil, desde o Ceará até o Rio Grande do Sul. Também pode ser encontrado em outras regiões como no Centro-Oeste ou Sudeste.",
     uses: "Frutos consumidos in natura e em doces.",
     heightDiameter: "Até 10 metros de altura e de 15 a 25 centímetros de diâmetro.",
