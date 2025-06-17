@@ -22,7 +22,7 @@ const treeData = [
     id: 2,
     commonName: "Araucária",
     scientificName: "Araucaria angustifolia",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczMaxfSdeJKXJxfU0vEk_hQXV6RZpKlqE5jbBTU0f4sypasxUyg6kvk=w475-h312-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/Vb25eQn.jpeg", // Imagem placeholder
     distribution: "Sul do Brasil (Mata Atlântica), Argentina, Paraguai.",
     uses: "Madeira, pinhão (semente comestível).",
     heightDiameter: "Até 50m de altura, 2m de diâmetro.",
@@ -37,7 +37,7 @@ const treeData = [
     id: 3,
     commonName: "Cedro",
     scientificName: "Cedrela fissilis",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczONgNNHDYhGBJonIR-AiGfmILD660aABMdvcJylmj289HgSbW264rk=w433-h651-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://placehold.co/400x300/C0C0C0/FFFFFF?text=Cedro+Img", // Link placeholder - Substituir pelo Imgur correto
     distribution: "No Brasil, o cedro é mais comum na Mata Atlântica, podendo também ser encontrado em outros biomas, como o Cerrado.",
     uses: "Madeira nobre para móveis, pisos e contrução civil.",
     heightDiameter: "Pode atingir até 40 metros de altura e 3 metros de diâmetro. No entanto, no Brasil, costuma atingir cerca de 20 metros de altura e 1,2 metros de circunferência.",
@@ -52,7 +52,7 @@ const treeData = [
     id: 4,
     commonName: "Farinha-seca",
     scientificName: "Albizia polycephala",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczOCR66sVs4lv-SXm4eX_qX_p5Ne6rGsAnNTkqHn568bTtXsI36FK14=w598-h478-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/3nd2CsF.jpeg", // Imagem placeholder
     distribution: "Encontrada no Brasil, especialmente na Mata Atlântica, no Cerrado e no Pantanal.",
     uses: "Frutos comestíveis, consumidos in natura ou em doces.",
     heightDiameter: "Pode atingir entre 10 e 20 metros de altura, com algumas árvores podendo chegar a 35 metros. O diâmetro do tronco pode variar entre 40 a 80 centímetros, mas em árvores mais velhas pode chegar a 3 metros.",
@@ -67,7 +67,7 @@ const treeData = [
     id: 5,
     commonName: "Feijão-cru",
     scientificName: "Enterolobium contortisiliquum", // Falso, é o nome científico do Tamboril
-    imageUrl: "https://placehold.co/400x300/7CFC00/FFFFFF?text=Feijão-cru", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/LQKg4HS.jpeg", // Imagem placeholder
     distribution: "Distribuída pela América do Sul, especificamente em áreas do Brasil, Argentina, Uruguai, Paraguai, Bolívia e outras regiões.",
     uses: "Uso em paisagismo e restauração de áreas degradadas, além de usos medicinas e industriais.",
     heightDiameter: "Pode atingir entre 20 e 35 metros de altura e de 80 a 160 centímetros de diâmetro.",
@@ -82,7 +82,7 @@ const treeData = [
     id: 6,
     commonName: "Gurucaia",
     scientificName: "Acrocomia aculeata",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczNGySckTtcG6_6dkkRZvx8F2q69M7F7FN5Jaykh0z9OGqhYG0rbOaM=w640-h419-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/ZGlDpXb.jpeg", // Imagem placeholder
     distribution: "Pode ser encontrada em quase todas as regiões do Brasil, desde o sul do México e Caribe até o Paraguai e norte da Argentina.",
     uses: "Usado em construções rústicas, confecção de redes e linhas de pesca, além da polpa e a amêndoa que são consumidas in natura ou em produtos como sorvetes, bolos e cocadas.",
     heightDiameter: "Pode variar de 20 a 30 metros, com exemplares maiores chegando a até 35 metros, e o diâmetro pode variar de 60 a 110 centímetros com registros de até 140 centímetros.",
@@ -97,7 +97,7 @@ const treeData = [
     id: 7,
     commonName: "Guaritá",
     scientificName: "Astronium graveolens",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczNwDQ2gkyddBVD_qan8WzDrKLtVDQv-lBvGR_eHNZg5iaLUL0r_7LU=w425-h548-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://placehold.co/400x300/8B4513/FFFFFF?text=Guaritá+Img", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Mata Atlântica, Caatinga, Cerrado, Amazônia e Pampa.",
     uses: "Construção civil, móveis e paisagismo.",
     heightDiameter: "Pode variar de 15 a 25 metros e o diâmetro varia entre 40 a 60 centímetros.",
@@ -112,7 +112,7 @@ const treeData = [
     id: 8,
     commonName: "Ingá",
     scientificName: "Inga edulis",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczNVDY2za3Q4JRC3ULkNXG3q_ppLtJSM4iNKs7ofal-m9WDTHcMmPRE=w526-h340-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/JP2tOoo.jpeg", // Imagem placeholder
     distribution: "Encontrado no Norte e Oeste da América do Sul.",
     uses: "Usada na medicina popular, a madeira é usada em obras internas e  os frutos são comestíveis.",
     heightDiameter: "A altura pode variar entre 5 e 25 metros, com algumas árvores atingindo até 30 metros. O diâmetro varia entre 50 e 90 centímetros.",
@@ -127,7 +127,7 @@ const treeData = [
     id: 9,
     commonName: "Ipê-amarelo",
     scientificName: "Handroanthus chrysotrichus",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczOYho3bL3gowxW7nnrFrBiLrGVS8c097SPj1jExLS08b-LvFOd8tJo=w653-h651-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://placehold.co/400x300/FFD700/FFFFFF?text=Ipê-amarelo+Img", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Brasil (especialmente Mata Atlântica e Cerrado).",
     uses: "Madeira, paisagismo, medicinal (chá da casca).",
     heightDiameter: "Até 20m de altura, 60cm de diâmetro.",
@@ -142,7 +142,7 @@ const treeData = [
     id: 10,
     commonName: "Ipê-branco",
     scientificName: "Handroanthus roseoalba",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczMKDAW2bxHj1F0UvvtDrDDSAxrr3eEg3N4DNkWD-_kKrFgffSS-VyE=w619-h651-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://placehold.co/400x300/FFFFFF/000000?text=Ipê-branco+Img", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Encontrado em diversas regiões do Brasil, principalmente no Norte, Nordeste, Sudeste e Centro-Oeste.",
     uses: "Ornamentação, paisagismo e até usos medicinais.",
     heightDiameter: "Altura entre 7 e 16 metros e o diâmetro varia de 40 a 50 centímetros.",
@@ -157,7 +157,7 @@ const treeData = [
     id: 11,
     commonName: "Ipê-roxo",
     scientificName: "Handroanthus impetiginosus",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczOuJchPgH6YE55GNX29RYGgXinCVfvR3OUgZBxNcX7mdKBsi7cw8ls=w282-h209-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/MI2ZlG7.jpeg", // Imagem placeholder
     distribution: "Encontrada em muitas áreas da América do Sul.",
     uses: "Utilizada na medicina popular e construção civil.",
     heightDiameter: "Pode atingir uma altura de 8 a 12 metros, com diâmetro do tronco variando entre 60 a 80 centímetros.",
@@ -172,7 +172,7 @@ const treeData = [
     id: 12,
     commonName: "Jaracatiá",
     scientificName: "Jacaratia spinosa",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczP1NSMD5vZVblus7wGUybrQ4ZKSRzNUZPmKzSEy9rdsUhz6rI6BPNI=w196-h257-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/oqB4SgE.jpeg", // Imagem placeholder
     distribution: "Mata Atlântica, com distribuição desde o sul da Bahia até o Rio Grande do Sul.",
     uses: "Os frutos (e o até o tronco) podem ser utilizados na culinária.",
     heightDiameter: "Pode atingir entre 10 e 20 metros de altura. O diâmetro geralmente varia entre 60 a 90 centímetros.",
@@ -187,7 +187,7 @@ const treeData = [
     id: 13,
     commonName: "Jatobá",
     scientificName: "Hymenaea courbaril",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczO9BEP-0YJc1p6G9bfm8p4nlLqw1ktKPCZG144Gf2MairqJkjwKs8Y=w488-h651-s-no-gm?authuser=0", // A URL duplicada foi corrigida aqui
+    imageUrl: "https://placehold.co/400x300/8B0000/FFFFFF?text=Jatobá+Img", // Link placeholder - Substituir pelo Imgur correto (corrigido um link duplicado aqui)
     distribution: "Muito amplo no Brasil, encontrado em biomas como a Amazônia, Mata Atlântica, Pantanal e Cerrado.",
     uses: "Utilizado na medicina popular, além disso, a madeira do jatobá é usada em construções e fabricações de móveis.",
     heightDiameter: "Altura entre 15 e 40 metros, e o diâmetro pode variar entre 0,5 a 2 metros.",
@@ -202,7 +202,7 @@ const treeData = [
     id: 14,
     commonName: "Jequitibá",
     scientificName: "Cariniana legalis",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczOtXNtriXFRj80odnvT-wUic9t_h6RdD_0RDmshOPY1EXecfaaSbNM=w793-h545-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/VVA84vJ.jpeg", // Imagem placeholder
     distribution: "Mata Atlântica, encontrada especialmente no leste do Brasil.",
     uses: "Construção civil, fabricação de móveis, medicina popular e ornamentação.",
     heightDiameter: "Pode chegar a 50 metros de altura, e o diâmetro pode ser superior a 3 metros.",
@@ -217,7 +217,7 @@ const treeData = [
     id: 15,
     commonName: "Mamica-de-porca",
     scientificName: "Zanthoxylum rhoifolium",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczPW6SD8kBaI6mCtEML0_6U_TdsOyPi3V62TI5LZwYMDNCzTSJ6SwG4=w324-h492-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/cA7N96c.jpeg", // Imagem placeholder
     distribution: "Várias partes da América do Sul, incluindo o Brasil.",
     uses: "Fins medicinais, paisagismo e arborização.",
     heightDiameter: "Altura de 6 a 12 metros, com o diâmetro do tronco variando entre 30 e 40 centímetros.",
@@ -232,7 +232,7 @@ const treeData = [
     id: 16,
     commonName: "Paineira",
     scientificName: "Ceiba speciosa",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczN6glr1K2mNG-dglhl1v-2b_er4RQSXFIf0TfaHCvc6nfGGqHiIvzc=w645-h631-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://placehold.co/400x300/8B5CF6/FFFFFF?text=Paineira+Img", // Link placeholder - Substituir pelo Imgur correto
     distribution: "América do Sul (Brasil, Argentina, Paraguai)",
     uses: "Fibra (painas do fruto), madeira leve, paisagismo",
     heightDiameter: "Até 30m de altura, 1m de diâmetro",
@@ -247,7 +247,7 @@ const treeData = [
     id: 17,
     commonName: "Pau-d’alho",
     scientificName: "Gallesia integrifolia",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczM-bKl8Ru16VSU4YuoF_FdQdBokvEq_m8MQ3kl0RK5MdHkvXxfMaag=w488-h651-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://placehold.co/400x300/6A5ACD/FFFFFF?text=Pau-d’alho+Img", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Distribuição ampla desde a Bahia até o Paraná, além de ser encontrada também em outras regiões da América do Sul, como a Bolívia, Equador e Peru.",
     uses: "Medicina popular, arborização e construções rústicas.",
     heightDiameter: "Pode atingir uma altura de 15 a 30 metros, com o diâmetro do tronco variando entre 70 e 140 centímetros.",
@@ -262,7 +262,7 @@ const treeData = [
     id: 18,
     commonName: "Peroba-rosa",
     scientificName: "Aspidosperma polyneuron",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczO_oGdcgRGok85w2H6ywxHnE9gkpYRlxM3Kt8xlLK00XP32DCwAof8=w341-h435-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/EdxFmfx.jpeg", // Imagem placeholder
     distribution: "A distribuição é vasta e ocorre naturalmente no Brasil, Argentina, Paraguai, Colômbia, Peru e Venezuela.",
     uses: "Ornamentação, além de sua madeira de alta qualidade ser utilizada em diferentes tipos de fabricação.",
     heightDiameter: "Pode atingir alturas de 20 a 30 metros, com diâmetro de 60 a 120 centímetros.",
@@ -277,7 +277,7 @@ const treeData = [
     id: 19,
     commonName: "Sibipiruna",
     scientificName: "Caesalpinia pluviosa",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczNS0VZ61yce5mTO1iRyv9hsiHyl_OBgcE18dw5WIAr7I3LE3RDQk30=w868-h651-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/CFDqTi4.jpeg", // Imagem placeholder
     distribution: "Região da Mata Atlântic, com ocorrência em diversos estados do Brasil.",
     uses: "Usos medicinais, marcenaria e construções.",
     heightDiameter: "Altura entre 8 e 16 metros, com o diâmetro do tronco variando entre 30 a 40 centímetros.",
@@ -292,7 +292,7 @@ const treeData = [
     id: 20,
     commonName: "Tapiá",
     scientificName: "Alchornea sidifolia",
-    imageUrl: "https://photos.fife.usercontent.google.com/pw/AP1GczP1YJH1xnls3FaHT53q9BBuYmOWc86W3150SClGDvxQ1p2_lhrjhe8=w750-h532-s-no-gm?authuser=0", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/jQaqtdV.jpeg", // Imagem placeholder
     distribution: "Mata Atlântica no Sudeste e Sul do Brasil, incluindo diversos outros estados brasileiros.",
     uses: "Recomposição de áreas degradadas, além de aplicações em carpintaria.",
     heightDiameter: "Entre 10 a 20 metros de altura e tronco com diâmetro entre 50 a 70 centímetros.",
