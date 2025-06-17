@@ -37,7 +37,7 @@ const treeData = [
     id: 3,
     commonName: "Cedro",
     scientificName: "Cedrela fissilis",
-    imageUrl: "https://placehold.co/400x300/C0C0C0/FFFFFF?text=Cedro+Img", // Link placeholder - Substituir pelo Imgur correto
+    imageUrl: "https://i.imgur.com/diTD4AW.jpeg", // Link placeholder - Substituir pelo Imgur correto
     distribution: "No Brasil, o cedro é mais comum na Mata Atlântica, podendo também ser encontrado em outros biomas, como o Cerrado.",
     uses: "Madeira nobre para móveis, pisos e contrução civil.",
     heightDiameter: "Pode atingir até 40 metros de altura e 3 metros de diâmetro. No entanto, no Brasil, costuma atingir cerca de 20 metros de altura e 1,2 metros de circunferência.",
@@ -97,7 +97,7 @@ const treeData = [
     id: 7,
     commonName: "Guaritá",
     scientificName: "Astronium graveolens",
-    imageUrl: "https://placehold.co/400x300/8B4513/FFFFFF?text=Guaritá+Img", // Link placeholder - Substituir pelo Imgur correto
+    imageUrl: "https://i.imgur.com/q4xKLC4.jpeg", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Mata Atlântica, Caatinga, Cerrado, Amazônia e Pampa.",
     uses: "Construção civil, móveis e paisagismo.",
     heightDiameter: "Pode variar de 15 a 25 metros e o diâmetro varia entre 40 a 60 centímetros.",
@@ -127,7 +127,7 @@ const treeData = [
     id: 9,
     commonName: "Ipê-amarelo",
     scientificName: "Handroanthus chrysotrichus",
-    imageUrl: "https://placehold.co/400x300/FFD700/FFFFFF?text=Ipê-amarelo+Img", // Link placeholder - Substituir pelo Imgur correto
+    imageUrl: "https://i.imgur.com/7RfFBmb.jpeg", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Brasil (especialmente Mata Atlântica e Cerrado).",
     uses: "Madeira, paisagismo, medicinal (chá da casca).",
     heightDiameter: "Até 20m de altura, 60cm de diâmetro.",
@@ -142,7 +142,7 @@ const treeData = [
     id: 10,
     commonName: "Ipê-branco",
     scientificName: "Handroanthus roseoalba",
-    imageUrl: "https://placehold.co/400x300/FFFFFF/000000?text=Ipê-branco+Img", // Link placeholder - Substituir pelo Imgur correto
+    imageUrl: "https://i.imgur.com/i3fE3aW.jpeg", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Encontrado em diversas regiões do Brasil, principalmente no Norte, Nordeste, Sudeste e Centro-Oeste.",
     uses: "Ornamentação, paisagismo e até usos medicinais.",
     heightDiameter: "Altura entre 7 e 16 metros e o diâmetro varia de 40 a 50 centímetros.",
@@ -187,7 +187,7 @@ const treeData = [
     id: 13,
     commonName: "Jatobá",
     scientificName: "Hymenaea courbaril",
-    imageUrl: "https://placehold.co/400x300/8B0000/FFFFFF?text=Jatobá+Img", // Link placeholder - Substituir pelo Imgur correto (corrigido um link duplicado aqui)
+    imageUrl: "https://i.imgur.com/IEsXoMa.jpeg", // Link placeholder - Substituir pelo Imgur correto (corrigido um link duplicado aqui)
     distribution: "Muito amplo no Brasil, encontrado em biomas como a Amazônia, Mata Atlântica, Pantanal e Cerrado.",
     uses: "Utilizado na medicina popular, além disso, a madeira do jatobá é usada em construções e fabricações de móveis.",
     heightDiameter: "Altura entre 15 e 40 metros, e o diâmetro pode variar entre 0,5 a 2 metros.",
@@ -232,7 +232,7 @@ const treeData = [
     id: 16,
     commonName: "Paineira",
     scientificName: "Ceiba speciosa",
-    imageUrl: "https://placehold.co/400x300/8B5CF6/FFFFFF?text=Paineira+Img", // Link placeholder - Substituir pelo Imgur correto
+    imageUrl: "https://i.imgur.com/1KcGz26.jpeg", // Link placeholder - Substituir pelo Imgur correto
     distribution: "América do Sul (Brasil, Argentina, Paraguai)",
     uses: "Fibra (painas do fruto), madeira leve, paisagismo",
     heightDiameter: "Até 30m de altura, 1m de diâmetro",
@@ -247,7 +247,7 @@ const treeData = [
     id: 17,
     commonName: "Pau-d’alho",
     scientificName: "Gallesia integrifolia",
-    imageUrl: "https://placehold.co/400x300/6A5ACD/FFFFFF?text=Pau-d’alho+Img", // Link placeholder - Substituir pelo Imgur correto
+    imageUrl: "https://i.imgur.com/zuZ5FG2.jpeg", // Link placeholder - Substituir pelo Imgur correto
     distribution: "Distribuição ampla desde a Bahia até o Paraná, além de ser encontrada também em outras regiões da América do Sul, como a Bolívia, Equador e Peru.",
     uses: "Medicina popular, arborização e construções rústicas.",
     heightDiameter: "Pode atingir uma altura de 15 a 30 metros, com o diâmetro do tronco variando entre 70 e 140 centímetros.",
