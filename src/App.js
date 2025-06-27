@@ -152,8 +152,7 @@ const treeData = [
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou vegetativo.",
     fruitingTime: "3 a 5 anos."
-  }
-];
+  },
   {
     id: 11,
     commonName: "Ipê-roxo",
@@ -314,7 +313,10 @@ const TreeList = ({ onSelectTree }) => (
       {treeData.map((tree) => (
         <div key={tree.id} className="tree-card" onClick={() => onSelectTree(tree.id)}>
           <div className="image-box">
-            <img src={tree.imageUrl} alt={tree.commonName} className="tree-image"
+            <img
+              src={tree.imageUrl}
+              alt={tree.commonName}
+              className="tree-image"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'https://placehold.co/400x300/CCCCCC/666666?text=Imagem+Não+Disponível';
@@ -333,37 +335,46 @@ const TreeList = ({ onSelectTree }) => (
 
 // Detalhes da Árvore
 const TreeDetail = ({ tree, onBack }) => {
-  if (!tree) return (
-    <div className="not-found">
-      Árvore não encontrada.
-      <button className="back-button" onClick={onBack}>Voltar</button>
-    </div>
-  );
+  if (!tree) {
+    return (
+      <div className="detail-container">
+        <div className="detail-card">
+          <p>Árvore não encontrada.</p>
+          <button className="back-button" onClick={onBack}>Voltar</button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="detail-container">
-      <button className="back-button" onClick={onBack}>← Voltar</button>
-      <h1>{tree.commonName}</h1>
-      <p><em>{tree.scientificName}</em></p>
-      <div className="detail-content">
-        <div className="detail-image-box">
-          <img src={tree.imageUrl} alt={tree.commonName} className="detail-image"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'https://placehold.co/600x400/CCCCCC/666666?text=Imagem+Não+Disponível';
-            }}
-          />
-        </div>
-        <div className="detail-info">
-          <p><strong>Distribuição:</strong> {tree.distribution}</p>
-          <p><strong>Usos:</strong> {tree.uses}</p>
-          <p><strong>Altura/Diâmetro:</strong> {tree.heightDiameter}</p>
-          <p><strong>Tempo de Crescimento:</strong> {tree.growthTime}</p>
-          <p><strong>Ameaçada:</strong> {tree.endangered}</p>
-          <p><strong>Significado do Nome:</strong> {tree.nameMeaning}</p>
-          <p><strong>Nativa ou Exótica:</strong> {tree.nativeExotic}</p>
-          <p><strong>Propagação:</strong> {tree.propagation}</p>
-          <p><strong>Frutificação:</strong> {tree.fruitingTime}</p>
+      <div className="detail-card">
+        <button className="back-button" onClick={onBack}>← Voltar</button>
+        <h1>{tree.commonName}</h1>
+        <p><em>{tree.scientificName}</em></p>
+        <div className="detail-content">
+          <div className="detail-image-box">
+            <img
+              src={tree.imageUrl}
+              alt={tree.commonName}
+              className="detail-image"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://placehold.co/600x400/CCCCCC/666666?text=Imagem+Não+Disponível';
+              }}
+            />
+          </div>
+          <div className="detail-info">
+            <p><strong>Distribuição:</strong> {tree.distribution}</p>
+            <p><strong>Usos:</strong> {tree.uses}</p>
+            <p><strong>Altura/Diâmetro:</strong> {tree.heightDiameter}</p>
+            <p><strong>Tempo de Crescimento:</strong> {tree.growthTime}</p>
+            <p><strong>Ameaçada:</strong> {tree.endangered}</p>
+            <p><strong>Significado do Nome:</strong> {tree.nameMeaning}</p>
+            <p><strong>Nativa ou Exótica:</strong> {tree.nativeExotic}</p>
+            <p><strong>Propagação:</strong> {tree.propagation}</p>
+            <p><strong>Frutificação:</strong> {tree.fruitingTime}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -387,4 +398,3 @@ function App() {
 }
 
 export default App;
-
