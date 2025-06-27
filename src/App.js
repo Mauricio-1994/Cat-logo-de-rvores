@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
+import './App.css';
 
-// Dados de exemplo para as árvores
-// Você pode substituir e expandir estes dados com as informações reais das árvores do parque.
+// Dados das árvores
 const treeData = [
   {
     id: 1,
     commonName: "Araçá",
     scientificName: "Psidium cattleyanum",
-    imageUrl: "https://i.imgur.com/9AzQpFj.jpeg", // Imagem placeholder
-    distribution: "Florestas tropicais e subtropicais. Nativo da Mata Atlântica, com maior ocorrência no litoral do Brasil, desde o Ceará até o Rio Grande do Sul. Também pode ser encontrado em outras regiões como no Centro-Oeste ou Sudeste.",
+    imageUrl: "https://i.imgur.com/9AzQpFj.jpeg",
+    distribution: "Florestas tropicais e subtropicais...",
     uses: "Frutos consumidos in natura e em doces.",
-    heightDiameter: "Até 10 metros de altura e de 15 a 25 centímetros de diâmetro.",
+    heightDiameter: "Até 10 metros de altura...",
     growthTime: "De 2 a 3 anos.",
-    endangered: "Algumas espécies de araçá estão ameaçadas de extinção, como araçá-roxo e o araçá-de-manaus.",
-    nameMeaning: "O nome \"araçá\" na linguagem tupi-guarani significa \"planta que tem olhos\"", // Corrigido: aspas internas escapadas
-    nativeExotic: "Nativa da América do Sul, especificamente do Brasil e regiôes próximas.",
+    endangered: "Algumas espécies estão ameaçadas...",
+    nameMeaning: "O nome 'araçá' na linguagem tupi-guarani significa 'planta que tem olhos'",
+    nativeExotic: "Nativa da América do Sul.",
     propagation: "Por sementes ou métodos como estaquia e enxertia.",
-    fruitingTime: "De 2 a 3 anos após o plantio.",
+    fruitingTime: "De 2 a 3 anos após o plantio."
   },
   {
     id: 2,
     commonName: "Araucária",
     scientificName: "Araucaria angustifolia",
-    imageUrl: "https://i.imgur.com/Vb25eQn.jpeg", // Imagem placeholder
+    imageUrl: "https://i.imgur.com/Vb25eQn.jpeg",
     distribution: "Sul do Brasil (Mata Atlântica), Argentina, Paraguai.",
     uses: "Madeira, pinhão (semente comestível).",
     heightDiameter: "Até 50m de altura, 2m de diâmetro.",
@@ -31,467 +31,356 @@ const treeData = [
     nameMeaning: "Araucária: nome da tribo indígena 'Arauco'.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Produz pinhões após 12-15 anos de plantio.",
+    fruitingTime: "Produz pinhões após 12-15 anos."
   },
   {
     id: 3,
     commonName: "Cedro",
     scientificName: "Cedrela fissilis",
-    imageUrl: "https://i.imgur.com/diTD4AW.jpeg", // Link placeholder - Substituir por link Imgur direto
-    distribution: "No Brasil, o cedro é mais comum na Mata Atlântica, podendo também ser encontrado em outros biomas, como o Cerrado.",
-    uses: "Madeira nobre para móveis, pisos e contrução civil.",
-    heightDiameter: "Pode atingir até 40 metros de altura e 3 metros de diâmetro. No entanto, no Brasil, costuma atingir cerca de 20 metros de altura e 1,2 metros de circunferência.",
-    growthTime: "Entre 20 e 40 anos no geral, porém algumas espécies como o cedro australiano podem crescer rapidamente, atingindo 8 metros de altura e 20 centímetros de diâmetro aos três anos.",
-    endangered: "Ameaçado de extinção, especificamente na categoria \"vulnerável\".", // Corrigido: aspas internas escapadas
-    nameMeaning: "Origem grega: kédros - significa \"queimar\", \"perfumar\" ou \"purificar\", em referência a odor da madeira. Origem latina: fissilis - significa \"fácil de rachar\".", // Corrigido: aspas internas escapadas
-    nativeExotic: "Algumas espécies são nativas e outras exóticas. A espécie mais comum no Brasil é o cedro-rosa, nativa da região. Existem outras espécies que são nativas da América Central, América do Sul ou até mesmo do Oriente Médio.",
+    imageUrl: "https://i.imgur.com/diTD4AW.jpeg",
+    distribution: "Mais comum na Mata Atlântica...",
+    uses: "Madeira nobre para móveis...",
+    heightDiameter: "Até 40m de altura...",
+    growthTime: "20 a 40 anos, cedro australiano cresce mais rápido.",
+    endangered: "Ameaçado de extinção.",
+    nameMeaning: "Do grego 'kédros', queimar/perfumar. 'Fissilis' significa fácil de rachar.",
+    nativeExotic: "Espécies nativas e exóticas.",
     propagation: "Sementes.",
-    fruitingTime: "Entre 10 a 15 anos após o plantio (dependendo do tipo e das condições de cultivo).",
+    fruitingTime: "10 a 15 anos após o plantio."
   },
   {
     id: 4,
     commonName: "Farinha-seca",
     scientificName: "Albizia polycephala",
-    imageUrl: "https://i.imgur.com/3nd2CsF.jpeg", // Imagem placeholder
-    distribution: "Encontrada no Brasil, especialmente na Mata Atlântica, no Cerrado e no Pantanal.",
-    uses: "Frutos comestíveis, consumidos in natura ou em doces.",
-    heightDiameter: "Pode atingir entre 10 e 20 metros de altura, com algumas árvores podendo chegar a 35 metros. O diâmetro do tronco pode variar entre 40 a 80 centímetros, mas em árvores mais velhas pode chegar a 3 metros.",
-    growthTime: "Pode alcançar, em média, 4 a 5 metros de altura em 2 anos.",
+    imageUrl: "https://i.imgur.com/3nd2CsF.jpeg",
+    distribution: "Mata Atlântica, Cerrado e Pantanal.",
+    uses: "Frutos comestíveis, doces.",
+    heightDiameter: "10 a 35 metros, 40 a 80 cm de diâmetro.",
+    growthTime: "Cresce até 5m em 2 anos.",
     endangered: "Não está em extinção.",
-    nameMeaning: "O nome \"farinha-seca\" se deve à sua casca amarelada e ligeiramente \"empoeirada\", que se assemelha a farinha seca.", // Corrigido: aspas internas escapadas
+    nameMeaning: "Casca amarelada e 'empoeirada', parecida com farinha.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes.",
-    fruitingTime: "Cerca de 3 a 5 anos após o plantio.",
+    fruitingTime: "3 a 5 anos após plantio."
   },
   {
     id: 5,
     commonName: "Feijão-cru",
-    scientificName: "Enterolobium contortisiliquum", // Falso, é o nome científico do Tamboril
-    imageUrl: "https://i.imgur.com/LQKg4HS.jpeg", // Imagem placeholder
-    distribution: "Distribuída pela América do Sul, especificamente em áreas do Brasil, Argentina, Uruguai, Paraguai, Bolívia e outras regiões.",
-    uses: "Uso em paisagismo e restauração de áreas degradadas, além de usos medicinas e industriais.",
-    heightDiameter: "Pode atingir entre 20 e 35 metros de altura e de 80 a 160 centímetros de diâmetro.",
-    growthTime: "O tempo de crescimento pode variar dependendo das condições ambientais e tipo de solo, mas leva cerca de 8 anos para iniciar o processo reprodutivo.",
+    scientificName: "Enterolobium contortisiliquum",
+    imageUrl: "https://i.imgur.com/LQKg4HS.jpeg",
+    distribution: "América do Sul (Brasil, Argentina...).",
+    uses: "Paisagismo, medicina, indústria.",
+    heightDiameter: "20 a 35m de altura, até 160cm de diâmetro.",
+    growthTime: "Cerca de 8 anos para iniciar reprodução.",
     endangered: "Não está em extinção.",
-    nameMeaning: "O nome \"feijão-cru\" se refere à vagem da árvore, que se assemelha à uma vagem de feijão.", // Corrigido: aspas internas escapadas
+    nameMeaning: "Vagem lembra feijão cru.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes ou mudas.",
-    fruitingTime: "Cerca de 3 a 5 anos após o plantio.",
+    fruitingTime: "3 a 5 anos."
   },
   {
     id: 6,
     commonName: "Gurucaia",
     scientificName: "Acrocomia aculeata",
-    imageUrl: "https://i.imgur.com/ZGlDpXb.jpeg", // Imagem placeholder
-    distribution: "Pode ser encontrada em quase todas as regiões do Brasil, desde o sul do México e Caribe até o Paraguai e norte da Argentina.",
-    uses: "Usado em construções rústicas, confecção de redes e linhas de pesca, além da polpa e a amêndoa que são consumidas in natura ou em produtos como sorvetes, bolos e cocadas.",
-    heightDiameter: "Pode variar de 20 a 30 metros, com exemplares maiores chegando a até 35 metros, e o diâmetro pode variar de 60 a 110 centímetros com registros de até 140 centímetros.",
-    growthTime: "Pode até atingir 4 metros em 2 anos.",
+    imageUrl: "https://i.imgur.com/ZGlDpXb.jpeg",
+    distribution: "Brasil, do México ao Paraguai.",
+    uses: "Construção rústica, alimentos.",
+    heightDiameter: "20 a 35m, até 140cm de diâmetro.",
+    growthTime: "Até 4m em 2 anos.",
     endangered: "Não corre risco de extinção.",
-    nameMeaning: "Em tupi-guarani, é conhecida como \"angicó-caá\", que se traduz como \"árvore para a doença da alma\"..", // Corrigido: aspas internas escapadas
-    nativeExotic: "Nativa da América do sul, especialmente da região tropical do Brasil.",
-    propagation: "Por semente ou por estaquia. ",
-    fruitingTime: "Leva de cerca de 2 a 3 anos para começar a produzir frutos.",
+    nameMeaning: "Em tupi-guarani, 'árvore para doença da alma'.",
+    nativeExotic: "Nativa do Brasil.",
+    propagation: "Semente ou estaquia.",
+    fruitingTime: "2 a 3 anos após plantio."
   },
   {
     id: 7,
     commonName: "Guaritá",
     scientificName: "Astronium graveolens",
-    imageUrl: "https://i.imgur.com/q4xKLC4.jpeg", // Link placeholder - Substituir pelo Imgur correto
-    distribution: "Mata Atlântica, Caatinga, Cerrado, Amazônia e Pampa.",
-    uses: "Construção civil, móveis e paisagismo.",
-    heightDiameter: "Pode variar de 15 a 25 metros e o diâmetro varia entre 40 a 60 centímetros.",
-    growthTime: "De 15 a 20 anos.",
-    endangered: "Não é considerada em extinção.",
-    nameMeaning: "Tem origem tupi-guarani e significa \"pau-pedra\".", // Corrigido: aspas internas escapadas
-    nativeExotic: "Nativa do brasil, mas também  encontrada em outras regiões da América do Sul.",
+    imageUrl: "https://i.imgur.com/q4xKLC4.jpeg",
+    distribution: "Mata Atlântica, Cerrado, Amazônia, etc.",
+    uses: "Construção, móveis, paisagismo.",
+    heightDiameter: "15 a 25m, 40 a 60 cm de diâmetro.",
+    growthTime: "15 a 20 anos.",
+    endangered: "Não é extinta.",
+    nameMeaning: "Em tupi, significa 'pau-pedra'.",
+    nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes, enxertia ou mergulhia.",
-    fruitingTime: "Leva de cerca de 10 a 15 anos para começar a produzir frutos de forma considerável.",
+    fruitingTime: "10 a 15 anos."
   },
   {
     id: 8,
     commonName: "Ingá",
     scientificName: "Inga edulis",
-    imageUrl: "https://i.imgur.com/JP2tOoo.jpeg", // Imagem placeholder
-    distribution: "Encontrado no Norte e Oeste da América do Sul.",
-    uses: "Usada na medicina popular, a madeira é usada em obras internas e  os frutos são comestíveis.",
-    heightDiameter: "A altura pode variar entre 5 e 25 metros, com algumas árvores atingindo até 30 metros. O diâmetro varia entre 50 e 90 centímetros.",
-    growthTime: "De 2 a 3 anos.",
+    imageUrl: "https://i.imgur.com/JP2tOoo.jpeg",
+    distribution: "Norte e Oeste da América do Sul.",
+    uses: "Fruto comestível, madeira, medicina.",
+    heightDiameter: "5 a 30m de altura, até 90cm de diâmetro.",
+    growthTime: "2 a 3 anos.",
     endangered: "Não está em extinção.",
-    nameMeaning: "O nome \"ingá\" tem origem indígena, significando \"embebido, ensopado\".", // Corrigido: aspas internas escapadas
+    nameMeaning: "'Embebido', 'ensopado' (tupi).",
     nativeExotic: "Nativa da América Latina.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "Varia de acordo com as condições de cultivo, mas geralmente leva cerca de 2 a 6 anos após o plantio.",
+    fruitingTime: "2 a 6 anos após plantio."
   },
   {
     id: 9,
     commonName: "Ipê-amarelo",
     scientificName: "Handroanthus chrysotrichus",
-    imageUrl: "https://i.imgur.com/7RfFBmb.jpeg", // Imagem placeholder
-    distribution: "Brasil (especialmente Mata Atlântica e Cerrado).",
-    uses: "Madeira, paisagismo, medicinal (chá da casca).",
-    heightDiameter: "Até 20m de altura, 60cm de diâmetro.",
-    growthTime: "Crescimento rápido a moderado.",
+    imageUrl: "https://i.imgur.com/7RfFBmb.jpeg",
+    distribution: "Brasil (Mata Atlântica e Cerrado).",
+    uses: "Madeira, paisagismo, medicinal.",
+    heightDiameter: "Até 20m, 60cm de diâmetro.",
+    growthTime: "Rápido a moderado.",
     endangered: "Não ameaçado.",
-    nameMeaning: "Ipê: do tupi 'casca grossa'; Amarelo: cor de suas flores.",
+    nameMeaning: "'Ipê' = casca grossa (tupi).",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Produz frutos anualmente, geralmente após 3-5 anos de plantio.",
+    fruitingTime: "3 a 5 anos."
   },
   {
     id: 10,
     commonName: "Ipê-branco",
     scientificName: "Handroanthus roseoalba",
-    imageUrl: "https://i.imgur.com/i3fE3aW.jpeg", // Imagem placeholder
-    distribution: "Encontrado em diversas regiões do Brasil, principalmente no Norte, Nordeste, Sudeste e Centro-Oeste.",
-    uses: "Ornamentação, paisagismo e até usos medicinais.",
-    heightDiameter: "Altura entre 7 e 16 metros e o diâmetro varia de 40 a 50 centímetros.",
-    growthTime: "Tempo de crecimento moderado, com as árvores alcançando de cerca de 3 metros em 2 anos ",
-    endangered: "Não está em ameaça de extinção.",
-    nameMeaning: "O nome \"ipê branco\" vem da língua tupi-guarani. \"Ipê\" significa \"árvore de casca grossa\". \"Branco\" se refere à cor da flor, que é branca.", // Corrigido: aspas internas escapadas
+    imageUrl: "https://i.imgur.com/i3fE3aW.jpeg",
+    distribution: "Presente em várias regiões do Brasil.",
+    uses: "Paisagismo, ornamental, medicinal.",
+    heightDiameter: "7 a 16m, 40 a 50cm de diâmetro.",
+    growthTime: "Até 3m em 2 anos.",
+    endangered: "Não está em extinção.",
+    nameMeaning: "'Ipê' = casca grossa, 'branco' = flor branca.",
     nativeExotic: "Nativa do Brasil.",
-    propagation: "Pode ser propagada tanto por sementes como por métodos vegetativos.  ",
-    fruitingTime: "Geralmente leva de 3 a 5 anos a partir do plantio para começar a produzir frutos.",
-  },
+    propagation: "Sementes ou vegetativo.",
+    fruitingTime: "3 a 5 anos."
+  }
+];
   {
     id: 11,
     commonName: "Ipê-roxo",
     scientificName: "Handroanthus impetiginosus",
-    imageUrl: "https://i.imgur.com/MI2ZlG7.jpeg", // Imagem placeholder
-    distribution: "Encontrada em muitas áreas da América do Sul.",
-    uses: "Utilizada na medicina popular e construção civil.",
-    heightDiameter: "Pode atingir uma altura de 8 a 12 metros, com diâmetro do tronco variando entre 60 a 80 centímetros.",
-    growthTime: "Pode levar de 3 a 5 anos para florescer após o plantio.",
+    imageUrl: "https://i.imgur.com/MI2ZlG7.jpeg",
+    distribution: "América do Sul.",
+    uses: "Construção civil, medicina popular.",
+    heightDiameter: "8 a 12m, 60 a 80cm de diâmetro.",
+    growthTime: "3 a 5 anos até florescer.",
     endangered: "Não está ameaçada de extinção.",
-    nameMeaning: "Tem origem na língua tupi-guarani. \"Ipê\" significa \"árvore de casca dura\". \"Roxo\" descreve a cor das flores.", // Corrigido: aspas internas escapadas
+    nameMeaning: "'Ipê' = casca dura (tupi), 'roxo' = cor das flores.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "De 3 a 7 anos.",
+    fruitingTime: "3 a 7 anos."
   },
   {
     id: 12,
     commonName: "Jaracatiá",
     scientificName: "Jacaratia spinosa",
-    imageUrl: "https://i.imgur.com/oqB4SgE.jpeg", // Imagem placeholder
-    distribution: "Mata Atlântica, com distribuição desde o sul da Bahia até o Rio Grande do Sul.",
-    uses: "Os frutos (e o até o tronco) podem ser utilizados na culinária.",
-    heightDiameter: "Pode atingir entre 10 e 20 metros de altura. O diâmetro geralmente varia entre 60 a 90 centímetros.",
-    growthTime: "Cerca de 4 a 6 anos.",
+    imageUrl: "https://i.imgur.com/oqB4SgE.jpeg",
+    distribution: "Sul da Bahia ao Rio Grande do Sul.",
+    uses: "Fruto e tronco usados na culinária.",
+    heightDiameter: "10 a 20m de altura, até 90cm de diâmetro.",
+    growthTime: "4 a 6 anos.",
     endangered: "Está em risco de extinção.",
-    nameMeaning: "Em tupi-guarani significa \"árvore semelhante ao mamoeiro\".", // Corrigido: aspas internas escapadas
+    nameMeaning: "Tupi-guarani: árvore semelhante ao mamoeiro.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "Cerca de 3 a 4 anos após o plantio.",
+    fruitingTime: "3 a 4 anos após o plantio."
   },
   {
     id: 13,
     commonName: "Jatobá",
     scientificName: "Hymenaea courbaril",
-    imageUrl: "https://i.imgur.com/IEsXoMa.jpeg", // Link Imgur correto (corrigido um link duplicado aqui)
-    distribution: "Muito amplo no Brasil, encontrado em biomas como a Amazônia, Mata Atlântica, Pantanal e Cerrado.",
-    uses: "Utilizado na medicina popular, além disso, a madeira do jatobá é usada em construções e fabricações de móveis.",
-    heightDiameter: "Altura entre 15 e 40 metros, e o diâmetro pode variar entre 0,5 a 2 metros.",
-    growthTime: "Entre 8 a 12 anos.",
+    imageUrl: "https://i.imgur.com/IEsXoMa.jpeg",
+    distribution: "Amazônia, Mata Atlântica, Cerrado, Pantanal.",
+    uses: "Construção, móveis, medicina popular.",
+    heightDiameter: "15 a 40m de altura, até 2m de diâmetro.",
+    growthTime: "8 a 12 anos.",
     endangered: "Está em risco de extinção.",
-    nameMeaning: "\"Jatobá\" vem do tupi-guarani e significa \"árvore de frutos duros\".", // Corrigido: aspas internas escapadas
+    nameMeaning: "Tupi-guarani: árvore de frutos duros.",
     nativeExotic: "Nativa da América do Sul e Central.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "Começa a frutificar entre 8 a 12 anos de idade.",
+    fruitingTime: "8 a 12 anos após plantio."
   },
   {
     id: 14,
     commonName: "Jequitibá",
     scientificName: "Cariniana legalis",
-    imageUrl: "https://i.imgur.com/VVA84vJ.jpeg", // Imagem placeholder
-    distribution: "Mata Atlântica, encontrada especialmente no leste do Brasil.",
-    uses: "Construção civil, fabricação de móveis, medicina popular e ornamentação.",
-    heightDiameter: "Pode chegar a 50 metros de altura, e o diâmetro pode ser superior a 3 metros.",
-    growthTime: "Cerca de 20 a 30 anos.",
+    imageUrl: "https://i.imgur.com/VVA84vJ.jpeg",
+    distribution: "Leste do Brasil (Mata Atlântica).",
+    uses: "Construção civil, móveis, medicina, ornamentação.",
+    heightDiameter: "Até 50m de altura e mais de 3m de diâmetro.",
+    growthTime: "20 a 30 anos.",
     endangered: "Está ameaçado de extinção.",
-    nameMeaning: "Vem do tupi-guarani e significa \"gigante da floresta\".", // Corrigido: aspas internas escapadas
+    nameMeaning: "Tupi-guarani: gigante da floresta.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Leva cerca de 20 anos para iniciar o processo de frutificação.",
+    fruitingTime: "Cerca de 20 anos."
   },
   {
     id: 15,
     commonName: "Mamica-de-porca",
     scientificName: "Zanthoxylum rhoifolium",
-    imageUrl: "https://i.imgur.com/cA7N96c.jpeg", // Imagem placeholder
-    distribution: "Várias partes da América do Sul, incluindo o Brasil.",
-    uses: "Fins medicinais, paisagismo e arborização.",
-    heightDiameter: "Altura de 6 a 12 metros, com o diâmetro do tronco variando entre 30 e 40 centímetros.",
-    growthTime: "Tempo de crescimento moderado. Geralmente sua altura não ultrapassa 2 metros em 2 anos de idade.",
+    imageUrl: "https://i.imgur.com/cA7N96c.jpeg",
+    distribution: "Várias partes do Brasil e América do Sul.",
+    uses: "Paisagismo, medicina, arborização.",
+    heightDiameter: "6 a 12m, 30 a 40cm de diâmetro.",
+    growthTime: "Até 2m em 2 anos.",
     endangered: "Não está em extinção.",
-    nameMeaning: "O nome popular refere-se à aparência da árvore que possui espinhos em seu tronco.",
+    nameMeaning: "Refere-se aos espinhos do tronco.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "Leva entre 9 e 11 anos para começar a frutificar.",
+    fruitingTime: "9 a 11 anos."
   },
   {
     id: 16,
     commonName: "Paineira",
     scientificName: "Ceiba speciosa",
-    imageUrl: "https://i.imgur.com/1KcGz26.jpeg", // Imagem placeholder
-    distribution: "América do Sul (Brasil, Argentina, Paraguai)",
-    uses: "Fibra (painas do fruto), madeira leve, paisagismo",
-    heightDiameter: "Até 30m de altura, 1m de diâmetro",
-    growthTime: "Crescimento rápido",
-    endangered: "Não ameaçada",
-    nameMeaning: "Paineira: referência à paina (fibra) dos frutos",
-    nativeExotic: "Nativa da América do Sul",
-    propagation: "Sementes, estacas",
-    fruitingTime: "Produz frutos após 5-8 anos de plantio",
+    imageUrl: "https://i.imgur.com/1KcGz26.jpeg",
+    distribution: "Brasil, Argentina, Paraguai.",
+    uses: "Fibra (paina), madeira leve, paisagismo.",
+    heightDiameter: "Até 30m, 1m de diâmetro.",
+    growthTime: "Crescimento rápido.",
+    endangered: "Não ameaçada.",
+    nameMeaning: "Referência à paina dos frutos.",
+    nativeExotic: "Nativa da América do Sul.",
+    propagation: "Sementes, estacas.",
+    fruitingTime: "5 a 8 anos."
   },
   {
     id: 17,
     commonName: "Pau-d’alho",
     scientificName: "Gallesia integrifolia",
-    imageUrl: "https://i.imgur.com/zuZ5FG2.jpeg", // Imagem placeholder
-    distribution: "Distribuição ampla desde a Bahia até o Paraná, além de ser encontrada também em outras regiões da América do Sul, como a Bolívia, Equador e Peru.",
-    uses: "Medicina popular, arborização e construções rústicas.",
-    heightDiameter: "Pode atingir uma altura de 15 a 30 metros, com o diâmetro do tronco variando entre 70 e 140 centímetros.",
-    growthTime: "Pode atingir 3 a 4 metros em cerca de 2 anos.",
-    endangered: "Está na lista de espécies que correm risco de extinção.",
-    nameMeaning: "O nome se refere ao seu forte aroma que se assemelha à alho, principalmente quando a madeira é verde.",
-    nativeExotic: "Nativa do Brasil, mas também encontrada em outros países.",
+    imageUrl: "https://i.imgur.com/zuZ5FG2.jpeg",
+    distribution: "Bahia ao Paraná e países vizinhos.",
+    uses: "Medicina popular, construções rústicas.",
+    heightDiameter: "15 a 30m, até 140cm de diâmetro.",
+    growthTime: "3 a 4m em 2 anos.",
+    endangered: "Risco de extinção.",
+    nameMeaning: "Cheiro forte de alho na madeira.",
+    nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Começa a produzir frutos a partir de 4 anos de idade.",
+    fruitingTime: "Após 4 anos."
   },
   {
     id: 18,
     commonName: "Peroba-rosa",
     scientificName: "Aspidosperma polyneuron",
-    imageUrl: "https://i.imgur.com/EdxFmfx.jpeg", // Imagem placeholder
-    distribution: "A distribuição é vasta e ocorre naturalmente no Brasil, Argentina, Paraguai, Colômbia, Peru e Venezuela.",
-    uses: "Ornamentação, além de sua madeira de alta qualidade ser utilizada em diferentes tipos de fabricação.",
-    heightDiameter: "Pode atingir alturas de 20 a 30 metros, com diâmetro de 60 a 120 centímetros.",
-    growthTime: "Pode levar cerca de 12 anos para atingir um crescimento considerável.",
-    endangered: "Está em risco de extinção.",
-    nameMeaning: "O nome \"peroba\" pode ter origem indígena, relacionada à dureza da madeira. \"Rosa\" se refere à cor que a madeira apresenta quando cortada.",
+    imageUrl: "https://i.imgur.com/EdxFmfx.jpeg",
+    distribution: "Brasil, Argentina, Colômbia, Peru, etc.",
+    uses: "Ornamentação, madeira de alta qualidade.",
+    heightDiameter: "20 a 30m de altura, até 120cm.",
+    growthTime: "Cerca de 12 anos.",
+    endangered: "Em risco de extinção.",
+    nameMeaning: "'Peroba' vem da dureza, 'rosa' da cor da madeira.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Começa a frutificar por volta dos 20 a 30 anos de idade.",
+    fruitingTime: "20 a 30 anos."
   },
   {
     id: 19,
     commonName: "Sibipiruna",
     scientificName: "Caesalpinia pluviosa",
-    imageUrl: "https://i.imgur.com/CFDqTi4.jpeg", // Imagem placeholder
-    distribution: "Região da Mata Atlântic, com ocorrência em diversos estados do Brasil.",
-    uses: "Usos medicinais, marcenaria e construções.",
-    heightDiameter: "Altura entre 8 e 16 metros, com o diâmetro do tronco variando entre 30 a 40 centímetros.",
-    growthTime: "Cerca de 5 a 7 anos.",
+    imageUrl: "https://i.imgur.com/CFDqTi4.jpeg",
+    distribution: "Mata Atlântica em vários estados.",
+    uses: "Medicinal, marcenaria, construções.",
+    heightDiameter: "8 a 16m, 30 a 40cm de diâmetro.",
+    growthTime: "5 a 7 anos.",
     endangered: "Não está em extinção.",
-    nameMeaning: "O nome \"sibipiruna\" tem origem tupi-guarani e traduz-se como \"casca preta\" ou \"raíz de casca preta\".",
+    nameMeaning: "Tupi: casca preta ou raiz escura.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "Pode começar a frutificar por volta de 5 a 7 anos após o plantio.",
+    fruitingTime: "5 a 7 anos."
   },
   {
     id: 20,
     commonName: "Tapiá",
     scientificName: "Alchornea sidifolia",
-    imageUrl: "https://i.imgur.com/jQaqtdV.jpeg", // Imagem placeholder
-    distribution: "Mata Atlântica no Sudeste e Sul do Brasil, incluindo diversos outros estados brasileiros.",
-    uses: "Recomposição de áreas degradadas, além de aplicações em carpintaria.",
-    heightDiameter: "Entre 10 a 20 metros de altura e tronco com diâmetro entre 50 a 70 centímetros.",
-    growthTime: "Tempo de crescimento considerado rápido, podendo atingir até 3 metros de altura no primeiro ano (em condições ideais de plantio).",
-    endangered: "Não está em risco de extinção.",
-    nameMeaning: "O nome vem do tupi-guarani e significa \"fruta de anta\", pois as antas têm predileção por esse fruto.",
+    imageUrl: "https://i.imgur.com/jQaqtdV.jpeg",
+    distribution: "Mata Atlântica no SE e Sul do Brasil.",
+    uses: "Recuperação de áreas degradadas.",
+    heightDiameter: "10 a 20m, 50 a 70cm de diâmetro.",
+    growthTime: "Até 3m no 1º ano.",
+    endangered: "Não está em extinção.",
+    nameMeaning: "Tupi: fruta de anta.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou meios vegetativos.",
-    fruitingTime: "Começa a frutificar cerca de 1 ano a partir da muda.",
-  },
+    fruitingTime: "1 ano após plantio."
+  }
 ];
 
-// Componente da Lista de Árvores (página inicial do catálogo)
-const TreeList = ({ onSelectTree }) => {
-  return (
-    <div className="p-4 sm:p-8 bg-green-50 min-h-screen font-inter">
-      <h1 className="text-3xl sm:text-4xl font-bold text-center text-green-800 mb-8 rounded-lg p-4 bg-white shadow-md">
-        Catálogo de Árvores do Parque Ecológico Danilo Marques Moura de Goioerê
-      </h1>
-
-      {/* Ajuste do grid para duas colunas em telas menores e uniformidade das miniaturas */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {treeData.map((tree) => (
-          <div
-            key={tree.id}
-            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden transform hover:scale-105"
-            onClick={() => onSelectTree(tree.id)}
-          >
-            <img
-              src={tree.imageUrl}
-              alt={tree.commonName}
-              // w-full garante que a imagem preencha a largura da coluna.
-              // h-48 define uma altura fixa para todas as miniaturas, garantindo uniformidade.
-              // object-cover garante que a imagem preencha o espaço sem distorcer, cortando se necessário.
-              className="w-full h-48 object-cover rounded-t-xl"
+// Lista de Árvores
+const TreeList = ({ onSelectTree }) => (
+  <div className="catalog-container">
+    <h1 className="catalog-title">Catálogo de Árvores do Parque Ecológico Danilo Marques Moura de Goioerê</h1>
+    <div className="tree-grid">
+      {treeData.map((tree) => (
+        <div key={tree.id} className="tree-card" onClick={() => onSelectTree(tree.id)}>
+          <div className="image-box">
+            <img src={tree.imageUrl} alt={tree.commonName} className="tree-image"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = `https://placehold.co/400x300/CCCCCC/666666?text=Imagem+Não+Disponível`;
+                e.target.src = 'https://placehold.co/400x300/CCCCCC/666666?text=Imagem+Não+Disponível';
               }}
             />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold text-gray-900 mb-1">
-                {tree.commonName}
-              </h2>
-              <p className="text-sm italic text-gray-600">
-                {tree.scientificName}
-              </p>
-            </div>
           </div>
-        ))}
-      </div>
+          <div className="tree-info">
+            <h2>{tree.commonName}</h2>
+            <p><em>{tree.scientificName}</em></p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+// Detalhes da Árvore
+const TreeDetail = ({ tree, onBack }) => {
+  if (!tree) return (
+    <div className="not-found">
+      Árvore não encontrada.
+      <button className="back-button" onClick={onBack}>Voltar</button>
     </div>
   );
-};
-
-// Componente de Detalhes da Árvore (página individual de cada espécie)
-const TreeDetail = ({ tree, onBack }) => {
-  if (!tree) {
-    return (
-      <div className="p-8 text-center text-gray-700">
-        Árvore não encontrada.
-        <button
-          onClick={onBack}
-          className="mt-4 px-6 py-3 bg-green-700 text-white font-semibold rounded-lg shadow-md hover:bg-green-800 transition-colors duration-300"
-        >
-          Voltar ao Catálogo
-        </button>
-      </div>
-    );
-  }
 
   return (
-    <div className="p-4 sm:p-8 bg-green-50 min-h-screen font-inter flex justify-center">
-      <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 max-w-4xl w-full">
-        <button
-          onClick={onBack}
-          className="mb-6 px-4 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg shadow-sm hover:bg-gray-400 transition-colors duration-300 flex items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mr-2"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Voltar ao Catálogo
-        </button>
-
-        <h1 className="text-2xl sm:text-3xl font-bold text-green-800 mb-4">
-          {tree.commonName}
-        </h1>
-        <p className="text-lg italic text-gray-600 mb-6">
-          {tree.scientificName}
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-6 mb-8">
-          {/* Contêiner da imagem na página de detalhes, centralizado */}
-          <div className="md:w-1/2 flex justify-center">
-            <img
-              src={tree.imageUrl}
-              alt={tree.commonName}
-              // h-80 define uma altura fixa para a imagem de detalhes
-              // object-cover garante que a imagem preencha o espaço sem distorcer
-              className="w-full h-80 object-cover rounded-xl shadow-md"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = `https://placehold.co/600x400/CCCCCC/666666?text=Imagem+Não+Disponível`;
-              }}
-            />
-          </div>
-          <div className="md:w-1/2 text-gray-800 space-y-3">
-            <p>
-              <strong className="text-green-700">Distribuição Geográfica:</strong>{" "}
-              {tree.distribution}
-            </p>
-            <p>
-              <strong className="text-green-700">Usos para o Ser Humano:</strong>{" "}
-              {tree.uses}
-            </p>
-            <p>
-              <strong className="text-green-700">Altura e Diâmetro:</strong>{" "}
-              {tree.heightDiameter}
-            </p>
-            <p>
-              <strong className="text-green-700">Tempo de Crescimento:</strong>{" "}
-              {tree.growthTime}
-            </p>
-            <p>
-              <strong className="text-green-700">Ameaçada de Extinção:</strong>{" "}
-              <span
-                className={`font-semibold ${
-                  tree.endangered === "Não ameaçada"
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {tree.endangered}
-              </span>
-            </p>
-            <p>
-              <strong className="text-green-700">Significado do Nome:</strong>{" "}
-              {tree.nameMeaning}
-            </p>
-            <p>
-              <strong className="text-green-700">Nativa ou Exótica:</strong>{" "}
-              {tree.nativeExotic}
-            </p>
-            <p>
-              <strong className="text-green-700">Tipo de Propagação:</strong>{" "}
-              {tree.propagation}
-            </p>
-            <p>
-              <strong className="text-green-700">Tempo para Produzir Frutos:</strong>{" "}
-              {tree.fruitingTime}
-            </p>
-          </div>
+    <div className="detail-container">
+      <button className="back-button" onClick={onBack}>← Voltar</button>
+      <h1>{tree.commonName}</h1>
+      <p><em>{tree.scientificName}</em></p>
+      <div className="detail-content">
+        <div className="detail-image-box">
+          <img src={tree.imageUrl} alt={tree.commonName} className="detail-image"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://placehold.co/600x400/CCCCCC/666666?text=Imagem+Não+Disponível';
+            }}
+          />
+        </div>
+        <div className="detail-info">
+          <p><strong>Distribuição:</strong> {tree.distribution}</p>
+          <p><strong>Usos:</strong> {tree.uses}</p>
+          <p><strong>Altura/Diâmetro:</strong> {tree.heightDiameter}</p>
+          <p><strong>Tempo de Crescimento:</strong> {tree.growthTime}</p>
+          <p><strong>Ameaçada:</strong> {tree.endangered}</p>
+          <p><strong>Significado do Nome:</strong> {tree.nameMeaning}</p>
+          <p><strong>Nativa ou Exótica:</strong> {tree.nativeExotic}</p>
+          <p><strong>Propagação:</strong> {tree.propagation}</p>
+          <p><strong>Frutificação:</strong> {tree.fruitingTime}</p>
         </div>
       </div>
     </div>
   );
 };
 
-// Componente Principal da Aplicação
+// App principal
 function App() {
   const [selectedTreeId, setSelectedTreeId] = useState(null);
-
-  const handleSelectTree = (id) => {
-    setSelectedTreeId(id);
-  };
-
-  const handleBackToCatalog = () => {
-    setSelectedTreeId(null);
-  };
-
-  const selectedTree = treeData.find((tree) => tree.id === selectedTreeId);
+  const selectedTree = treeData.find(tree => tree.id === selectedTreeId);
 
   return (
     <div>
-      {/* Script para carregar o Tailwind CSS */}
-      <script src="https://cdn.tailwindcss.com"></script>
-      {/* Configuração do Tailwind para usar a fonte Inter */}
-      <style>
-        {`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-          font-family: 'Inter', sans-serif;
-        }
-        `}
-      </style>
-
-      {selectedTreeId ? (
-        <TreeDetail tree={selectedTree} onBack={handleBackToCatalog} />
+      {selectedTree ? (
+        <TreeDetail tree={selectedTree} onBack={() => setSelectedTreeId(null)} />
       ) : (
-        <TreeList onSelectTree={handleSelectTree} />
+        <TreeList onSelectTree={setSelectedTreeId} />
       )}
     </div>
   );
