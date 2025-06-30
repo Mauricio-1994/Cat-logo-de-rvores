@@ -1,102 +1,115 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0fdf4;
+
+body, html {
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  display: block;
 }
 
 .catalog-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .catalog-title {
   text-align: center;
-  color: #065f46;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a237e;
+  transition: color 0.3s ease;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  display: block;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .tree-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
 .tree-card {
-  background-color: white;
-  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tree-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.image-box {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .tree-image {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
 .tree-info {
   padding: 1rem;
+  text-align: center;
 }
 
 .tree-info h2 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #111827;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: #1a237e;
+  transition: color 0.3s ease;
 }
 
 .tree-info p {
-  margin-top: 0.4rem;
-  color: #4b5563;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: #444;
+  transition: color 0.3s ease;
 }
 
-/* Página de detalhes */
-
 .detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
-  background-color: #f0fdf4;
-  display: flex;
-  justify-content: center;
 }
 
 .detail-card {
-  background-color: white;
-  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 12px;
   padding: 2rem;
-  max-width: 900px;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.back-button {
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #e5e7eb;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+.detail-card h1 {
+  color: #1a237e;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-card em {
+  color: #444;
 }
 
 .detail-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -111,19 +124,101 @@ body {
 
 .detail-image {
   width: 100%;
-  height: 320px;
+  max-width: 400px;
   object-fit: cover;
   border-radius: 8px;
 }
 
 .detail-info {
   flex: 2;
-  padding-left: 1rem;
-  font-size: 0.95rem;
-  color: #374151;
+  font-size: 1rem;
+  color: #222;
+  transition: color 0.3s ease;
 }
 
 .detail-info p {
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
+.back-button {
+  background-color: #4b6cb7;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #3953a4;
+}
+
+.back-button:focus {
+  outline: 3px solid #a4c8ff;
+  outline-offset: 2px;
+}
+
+.theme-toggle-wrapper {
+  text-align: right;
+  padding: 1rem 2rem 0 2rem;
+}
+
+.theme-toggle-button {
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: #ddd;
+}
+
+/* 🌙 Modo escuro */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .catalog-container,
+body.dark .detail-card,
+body.dark .tree-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark .tree-info h2,
+body.dark .catalog-title,
+body.dark .detail-card h1 {
+  color: #90caf9;
+}
+
+body.dark .search-input {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #eee;
+}
+
+body.dark .back-button {
+  background-color: #5b8cf5;
+}
+
+body.dark .back-button:hover {
+  background-color: #3d6ed4;
+}
+
+body.dark .detail-info p,
+body.dark .tree-info p,
+body.dark .detail-card em {
+  color: #fafafa;
+}

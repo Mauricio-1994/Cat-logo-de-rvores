@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+// App.js (atualizado com alternância de tema e aparência profissional)
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Dados das árvores
 const treeData = [
   {
     id: 1,
@@ -305,35 +305,49 @@ const treeData = [
   }
 ];
 
-// Lista de Árvores
-const TreeList = ({ onSelectTree }) => (
-  <div className="catalog-container">
-    <h1 className="catalog-title">Catálogo de Árvores do Parque Ecológico Danilo Marques Moura de Goioerê</h1>
-    <div className="tree-grid">
-      {treeData.map((tree) => (
-        <div key={tree.id} className="tree-card" onClick={() => onSelectTree(tree.id)}>
-          <div className="image-box">
-            <img
-              src={tree.imageUrl}
-              alt={tree.commonName}
-              className="tree-image"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://placehold.co/400x300/CCCCCC/666666?text=Imagem+Não+Disponível';
-              }}
-            />
-          </div>
-          <div className="tree-info">
-            <h2>{tree.commonName}</h2>
-            <p><em>{tree.scientificName}</em></p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+const TreeList = ({ onSelectTree }) => {
+  const [searchTerm, setSearchTerm] = useState('');
 
-// Detalhes da Árvore
+  const filteredTrees = treeData.filter(tree =>
+    tree.commonName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    tree.scientificName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div className="catalog-container">
+      <h1 className="catalog-title">Catálogo de Árvores do Parque Ecológico Danilo Marques Moura de Goioerê</h1>
+      <input
+        type="text"
+        placeholder="Pesquisar por nome comum ou científico..."
+        className="search-input"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <div className="tree-grid">
+        {filteredTrees.map((tree) => (
+          <div key={tree.id} className="tree-card" onClick={() => onSelectTree(tree.id)}>
+            <div className="image-box">
+              <img
+                src={tree.imageUrl}
+                alt={tree.commonName}
+                className="tree-image"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://placehold.co/400x300/CCCCCC/666666?text=Imagem+Não+Disponível';
+                }}
+              />
+            </div>
+            <div className="tree-info">
+              <h2>{tree.commonName}</h2>
+              <p><em>{tree.scientificName}</em></p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const TreeDetail = ({ tree, onBack }) => {
   if (!tree) {
     return (
@@ -381,13 +395,28 @@ const TreeDetail = ({ tree, onBack }) => {
   );
 };
 
-// App principal
 function App() {
   const [selectedTreeId, setSelectedTreeId] = useState(null);
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.body.className = '';
+    document.body.classList.add(theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   const selectedTree = treeData.find(tree => tree.id === selectedTreeId);
 
   return (
-    <div>
+    <div className="app-bg">
+      <div className="theme-toggle-wrapper">
+        <button onClick={toggleTheme} className="theme-toggle-button">
+          {theme === 'light' ? '🌙 Modo Escuro' : '☀️ Modo Claro'}
+        </button>
+      </div>
       {selectedTree ? (
         <TreeDetail tree={selectedTree} onBack={() => setSelectedTreeId(null)} />
       ) : (
@@ -398,3 +427,4 @@ function App() {
 }
 
 export default App;
+
