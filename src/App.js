@@ -82,7 +82,7 @@ const treeData = [
     id: 6,
     commonName: "Gurucaia",
     scientificName: "Acrocomia aculeata",
-    imageUrl: "https://i.imgur.com/ZGlDpXb.jpeg",
+    imageUrl: "https://i.imgur.com/CXZ6blA.jpeg",
     distribution: "Brasil, do México ao Paraguai.",
     uses: "Construção rústica, alimentos.",
     heightDiameter: "20 a 35m, até 140cm de diâmetro.",
