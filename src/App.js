@@ -1,4 +1,4 @@
-// App.js (atualizado com alternância de tema e aparência profissional)
+// App.js (atualizado com alternância de tema e aparência profissional e botão de link externo)
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -16,7 +16,8 @@ const treeData = [
     nameMeaning: "O nome 'araçá' na linguagem tupi-guarani significa 'planta que tem olhos'",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Por sementes ou métodos como estaquia e enxertia.",
-    fruitingTime: "De 2 a 3 anos após o plantio."
+    fruitingTime: "De 2 a 3 anos após o plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_ARACA" // Substitua pela URL real
   },
   {
     id: 2,
@@ -31,7 +32,8 @@ const treeData = [
     nameMeaning: "Araucária: nome da tribo indígena 'Arauco'.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Produz pinhões após 12-15 anos."
+    fruitingTime: "Produz pinhões após 12-15 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_ARAUCARIA" // Substitua pela URL real
   },
   {
     id: 3,
@@ -46,7 +48,8 @@ const treeData = [
     nameMeaning: "Do grego 'kédros', queimar/perfumar. 'Fissilis' significa fácil de rachar.",
     nativeExotic: "Espécies nativas e exóticas.",
     propagation: "Sementes.",
-    fruitingTime: "10 a 15 anos após o plantio."
+    fruitingTime: "10 a 15 anos após o plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_CEDRO" // Substitua pela URL real
   },
   {
     id: 4,
@@ -61,7 +64,8 @@ const treeData = [
     nameMeaning: "Casca amarelada e 'empoeirada', parecida com farinha.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes.",
-    fruitingTime: "3 a 5 anos após plantio."
+    fruitingTime: "3 a 5 anos após plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_FARINHASECA" // Substitua pela URL real
   },
   {
     id: 5,
@@ -76,7 +80,8 @@ const treeData = [
     nameMeaning: "Vagem lembra feijão cru.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes ou mudas.",
-    fruitingTime: "3 a 5 anos."
+    fruitingTime: "3 a 5 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_FEIJAOCRU" // Substitua pela URL real
   },
   {
     id: 6,
@@ -91,13 +96,14 @@ const treeData = [
     nameMeaning: "Em tupi-guarani, 'árvore para doença da alma'.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Semente ou estaquia.",
-    fruitingTime: "2 a 3 anos após plantio."
+    fruitingTime: "2 a 3 anos após plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_GURUCAIA" // Substitua pela URL real
   },
   {
     id: 7,
     commonName: "Guaritá",
     scientificName: "Astronium graveolens",
-    imageUrl: "https://i.imgur.com/q4xKLC4.jpeg",
+    imageUrl: "https://i.imgur.com/q4xKLCX.jpeg",
     distribution: "Mata Atlântica, Cerrado, Amazônia, etc.",
     uses: "Construção, móveis, paisagismo.",
     heightDiameter: "15 a 25m, 40 a 60 cm de diâmetro.",
@@ -106,7 +112,8 @@ const treeData = [
     nameMeaning: "Em tupi, significa 'pau-pedra'.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes, enxertia ou mergulhia.",
-    fruitingTime: "10 a 15 anos."
+    fruitingTime: "10 a 15 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_GUARITA" // Substitua pela URL real
   },
   {
     id: 8,
@@ -121,7 +128,8 @@ const treeData = [
     nameMeaning: "'Embebido', 'ensopado' (tupi).",
     nativeExotic: "Nativa da América Latina.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "2 a 6 anos após plantio."
+    fruitingTime: "2 a 6 anos após plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_INGA" // Substitua pela URL real
   },
   {
     id: 9,
@@ -136,7 +144,8 @@ const treeData = [
     nameMeaning: "'Ipê' = casca grossa (tupi).",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "3 a 5 anos."
+    fruitingTime: "3 a 5 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_IPEAMARELO" // Substitua pela URL real
   },
   {
     id: 10,
@@ -151,7 +160,8 @@ const treeData = [
     nameMeaning: "'Ipê' = casca grossa, 'branco' = flor branca.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou vegetativo.",
-    fruitingTime: "3 a 5 anos."
+    fruitingTime: "3 a 5 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_IPEBRANCO" // Substitua pela URL real
   },
   {
     id: 11,
@@ -166,7 +176,8 @@ const treeData = [
     nameMeaning: "'Ipê' = casca dura (tupi), 'roxo' = cor das flores.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "3 a 7 anos."
+    fruitingTime: "3 a 7 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_IPEROXO" // Substitua pela URL real
   },
   {
     id: 12,
@@ -181,7 +192,8 @@ const treeData = [
     nameMeaning: "Tupi-guarani: árvore semelhante ao mamoeiro.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "3 a 4 anos após o plantio."
+    fruitingTime: "3 a 4 anos após o plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_JARACATIA" // Substitua pela URL real
   },
   {
     id: 13,
@@ -196,7 +208,8 @@ const treeData = [
     nameMeaning: "Tupi-guarani: árvore de frutos duros.",
     nativeExotic: "Nativa da América do Sul e Central.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "8 a 12 anos após plantio."
+    fruitingTime: "8 a 12 anos após plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_JATOBA" // Substitua pela URL real
   },
   {
     id: 14,
@@ -211,7 +224,8 @@ const treeData = [
     nameMeaning: "Tupi-guarani: gigante da floresta.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Cerca de 20 anos."
+    fruitingTime: "Cerca de 20 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_JEQUITIBÁ" // Substitua pela URL real
   },
   {
     id: 15,
@@ -226,7 +240,8 @@ const treeData = [
     nameMeaning: "Refere-se aos espinhos do tronco.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "9 a 11 anos."
+    fruitingTime: "9 a 11 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_MAMICADEFORCA" // Substitua pela URL real
   },
   {
     id: 16,
@@ -241,7 +256,8 @@ const treeData = [
     nameMeaning: "Referência à paina dos frutos.",
     nativeExotic: "Nativa da América do Sul.",
     propagation: "Sementes, estacas.",
-    fruitingTime: "5 a 8 anos."
+    fruitingTime: "5 a 8 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_PAINEIRA" // Substitua pela URL real
   },
   {
     id: 17,
@@ -256,7 +272,8 @@ const treeData = [
     nameMeaning: "Cheiro forte de alho na madeira.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "Após 4 anos."
+    fruitingTime: "Após 4 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_PAUDALHO" // Substitua pela URL real
   },
   {
     id: 18,
@@ -271,7 +288,8 @@ const treeData = [
     nameMeaning: "'Peroba' vem da dureza, 'rosa' da cor da madeira.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes.",
-    fruitingTime: "20 a 30 anos."
+    fruitingTime: "20 a 30 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_PEROBAROSA" // Substitua pela URL real
   },
   {
     id: 19,
@@ -286,7 +304,8 @@ const treeData = [
     nameMeaning: "Tupi: casca preta ou raiz escura.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou estaquia.",
-    fruitingTime: "5 a 7 anos."
+    fruitingTime: "5 a 7 anos.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_SIBIPIRUNA" // Substitua pela URL real
   },
   {
     id: 20,
@@ -301,7 +320,8 @@ const treeData = [
     nameMeaning: "Tupi: fruta de anta.",
     nativeExotic: "Nativa do Brasil.",
     propagation: "Sementes ou meios vegetativos.",
-    fruitingTime: "1 ano após plantio."
+    fruitingTime: "1 ano após plantio.",
+    externalLink: "https://www.youtube.com/watch?v=SEU_VIDEO_TAPIA" // Substitua pela URL real
   }
 ];
 
@@ -390,6 +410,16 @@ const TreeDetail = ({ tree, onBack }) => {
             <p><strong>Frutificação:</strong> {tree.fruitingTime}</p>
           </div>
         </div>
+        {tree.externalLink && ( // Renderiza o botão SOMENTE se externalLink existir
+          <a
+            href={tree.externalLink}
+            target="_blank" // Abre o link em uma nova aba
+            rel="noopener noreferrer" // Recomendado por segurança
+            className="learn-more-button" // Adicione uma classe para estilização
+          >
+            Conheça melhor essa espécie
+          </a>
+        )}
       </div>
     </div>
   );
